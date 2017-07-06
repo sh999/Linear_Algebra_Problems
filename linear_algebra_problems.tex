@@ -1,86 +1,24 @@
 
 
-\documentclass{book}
+\documentclass{report}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \title{Linear Algebra Problems and Working Solutions}
-\date{}
+\date{2017}
 \renewcommand{\vec}[1]{\mathbf{#1}}
 \begin{document}
 	\maketitle
+	\begin{center}
+		\textit{Know how to solve every problem that has been solved} 
+		
+		-Richard Feynman
+	\end{center}
+	\tableofcontents
+	\chapter{Introduction}
+	This text is a compilation of linear algebra problems from various books and my attempts at solving them.  None of the solutions are guaranteed to be correct, although I try with the best of my ability.  The main purpose is to document my own progress in learning the subject and, for my future self, to help in looking back at specific topics that I may have forgotten.  As another quote from Feyman said, "What I do not create, I do not understand."  In my view, what I do not write, I do not understand.
 	\chapter{Vector Spaces}
-	\underline{Topics:}
-	\begin{enumerate}
-		\item Vector operations.
-		\item Vector spaces.
-		\item Basis and linear independence.
-	\end{enumerate}	
-	\underline{Problems:}
+	\input{chapters/vector_spaces.tex}
+	\chapter{Systems of Linear Equations}
+	\input{chapters/linear_equations.tex}
 	
-	\noindent\textbf{(1.1 Treil)}
-	Let $\vec{x} = (1,2,3)^T$,
-	$\vec{y} = (y_1,y_2,y_3)^T$, 
-	$\vec{z} = (4,2,1)^T.$ 
-	\\Compute $2\vec{x}, 3\vec{y}, \vec{x}+2\vec{y}-3\vec{z}.$  	
-	\\\textit{Answer:}
-	
-	$
-	2\vec{x}=2 
-	\begin{bmatrix}
-	1\\2\\3
-	\end{bmatrix}
-	= \begin{bmatrix}
-	2\\4\\6
-	\end{bmatrix}
-	$,\\\\
-
-	$
-	2\vec{y}=2 
-	\begin{bmatrix}
-	y_1\\y_2\\y_3
-	\end{bmatrix}
-	= \begin{bmatrix}
-	3\cdot y_1\\3\cdot y_2\\3\cdot y_3
-	\end{bmatrix}
-	$,\\\\
-
-	$
-	\vec{x}+2\vec{y}-3\vec{z}= 
-	\begin{bmatrix}
-	1\\2\\3
-	\end{bmatrix}+
-	\begin{bmatrix}
-	2\cdot y_1\\2\cdot y_2\\2\cdot y_3
-	\end{bmatrix}-
-	\begin{bmatrix}
-	12\\6\\3
-	\end{bmatrix}=
-	\begin{bmatrix}
-	2y_1-11\\2y_2-4\\2y_3
-	\end{bmatrix}
-	\\\square $\\\\
-
-	
-	\noindent\textbf{(1.8 Treil)}
-	Prove that for any vector $\vec{v}$ its additive inverse is $-\vec{v}$ is given by $(-1)\vec{v}$.
-	\\\textit{Answer:}
-	
-	The additive inverse axiom for vector spaces says that, given vector space $V,\forall \vec{v} \in V, \exists \vec{w} \in V$ such that $\vec{v}+\vec{w}=\vec{0}.$
-	If $\vec{v}$ is in field $\mathbb{R}^n$,
-	
-	$\vec{v}=(v_1,v_2,...,v_n).$
-	  
-	$(-1)\vec{v}=(-1)(v_1,v_2,...,v_n)=(-v_1,-v_2,...,-v_n)$
-	$\vec{v}+(-1)\vec{v}=(0,0,...0)=\vec{0}$.
-	Thus,$(-1)\vec{v}$ is the additive inverse of $\vec{v}.\\
-	\square$\\\\
-	
-	\noindent\textbf{(2.2.18 Shields)}
-	
-	Suppose that $\vec{u}$ is a linear combination of $\vec{v_1}$ and $\vec{v_2}$ and that $\vec{v_1}$ and $\vec{v_2}$ are each linear combinations of $\vec{w_1}$ and $\vec{w_2}$.  Is $\vec{u}$ a linear combination of $\vec{w_1}$ and $\vec{w_2}$?  Why?
-	\\\textit{Answer:}
-	
-	Since $\vec{u}$ is a linear combination of $\vec{v_1}$ and $\vec{v_2}$, $\vec{u}=c_1\vec{v_1}+c_2\vec{v_2}.$  By the same property, $\vec{v_1}=c_3\vec{w_1}+c_4\vec{w_2}$ and $\vec{v_2}=c_5\vec{w_1}+c_6\vec{w_2},$  where $c_i$ are constants.  So, $\vec{u}=c_1(c_3\vec{w_1}+c_4\vec{w_2})+c_2(c_5\vec{w_1}+c_6\vec{w_2})=a\vec{w_1}+b\vec{w_2},$ where $a$ and $b$ are constants.  Thus, $\vec{u}$ is a linear combination of $\vec{w_1}$ and $\vec{w_2}.\\
-	\square$\\\\
-	
-\end{document}\leftthreetimes 
+\end{document} 
